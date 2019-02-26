@@ -1,0 +1,17 @@
+介绍：使用Spring4+Springmvc+Mybatis3架构，采用Mysql数据库；使用Maven3管理项目，使用Shiro作为项目安全框架，使用Lucene作为全文检索，支持restful风格；前台网页使用主流的Bootstrap3 UI框架；后台管理使用主流易用的EasyUI轻量级框架；数据库连接池使用的是阿里巴巴的Druid；在线编辑器使用了百度的UEditor，支持单图，多图上传，支持截图上传，支持代码高亮特性；
+
+1.分两部分开发，前台博客展示和后台博客信息管理，开发顺序是先展示前台博客，即查询操作，模拟数据，前台展示完毕，在开发后台管理
+2.shiro只用到了权限控制部分，没有进行权限的分配等操作
+3.luncene就是增删改查操作，查询比较麻烦，还要设置高亮，过滤等操作
+4.ueditor中图片大小的设置在两个地方都设置了
+首先在ueditor/jsp/config.json配置图片路径等
+
+资源文件ueditor.all.js，在Ueditor目录下。我们找到这个文件
+找到render:function(container){}修改如下（可指定图片宽高或指定最大宽高）：.
+
+要在后台获取的话还要在ueditor.all.js配置loader.style
+ps:由于修改了配置，导入link的时候要导入ueditor.all.js  不能导入ueditor.all.min.js，不然不生效
+
+5.刷新缓存操作其实是重新从service中获取各个信息，然后application重新setAttribute
+6.安全退出用的是shiro中logout   --  SecurityUtils.getSubject().logout();
+
