@@ -16,3 +16,6 @@ ps:由于修改了配置，导入link的时候要导入ueditor.all.js  不能导
 5.刷新缓存操作其实是重新从service中获取各个信息，然后application重新setAttribute
 6.安全退出用的是shiro中logout   --  SecurityUtils.getSubject().logout();
 
+7.lucene使用对应类：BlogIndex
+添加删除修改的时候要更新对应的索引
+索引位置要指定  Directory dir=FSDirectory.open(Paths.get("E:\\BaiDuCloud\\项目\\博客实战\\lucene"));
