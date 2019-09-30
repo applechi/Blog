@@ -101,7 +101,7 @@
 	<thead>
 	<tr>
 		<th field="cb" checkbox="true" align="center"></th>
-		<th field="id" width="20" align="center">编号</th>
+		<th field="id" width="20" align="center" sortable="true">编号</th>
 		<th field="typeName" width="100" align="center">博客类型名称</th>
 		<th field="orderNo" width="100" align="center">排序序号</th>
 	</tr>

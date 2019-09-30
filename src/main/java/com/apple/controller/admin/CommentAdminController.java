@@ -44,12 +44,12 @@ public class CommentAdminController {
         map.put("size", pageBean.getPageSize());
         map.put("state", state); //评论的状态
         map.put("start", pageBean.getStart());
-        List<Comment> commentList   = commentService.list(map);
-        Long          total      =commentService.getTotal(map);
-        JSONObject    result     =new JSONObject();
-        JsonConfig jsonConfig=new JsonConfig();
+        List<Comment> commentList = commentService.list(map);
+        Long          total       =commentService.getTotal(map);
+        JSONObject    result      =new JSONObject();
+        JsonConfig    jsonConfig  =new JsonConfig();
         jsonConfig.registerJsonValueProcessor(java.util.Date.class, new DateJsonValueProcessor("yyyy-MM-dd"));
-        JSONArray jsonArray=JSONArray.fromObject(commentList, jsonConfig);
+        JSONArray jsonArray =JSONArray.fromObject(commentList, jsonConfig);
         result.put("rows", jsonArray);
         result.put("total", total);
         ResponseUtil.write(response, result);

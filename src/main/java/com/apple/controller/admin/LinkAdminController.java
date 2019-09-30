@@ -43,10 +43,10 @@ public class LinkAdminController {
 		Map<String,Object> map      =new HashMap<String,Object>();
 		map.put("start", pageBean.getStart());
 		map.put("size", pageBean.getPageSize());
-		List<Link> linkList=linkService.list(map);
-		Long total=linkService.getTotal(map);
-		JSONObject result=new JSONObject();
-		JSONArray jsonArray=JSONArray.fromObject(linkList);
+		List<Link> linkList  =linkService.list(map);
+		Long       total     =linkService.getTotal(map);
+		JSONObject result    =new JSONObject();
+		JSONArray  jsonArray =JSONArray.fromObject(linkList);
 		result.put("rows", jsonArray);
 		result.put("total", total);
 		ResponseUtil.write(response, result);

@@ -26,7 +26,6 @@
             var title=$("#title").val();
             var blogTypeId=$("#blogTypeId").combobox("getValue");
             var content=UE.getEditor('editor').getContent();
-           alert(content);
             var keyWord=$("#keyWord").val();
 
             if(title==null || title==''){
